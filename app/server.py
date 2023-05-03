@@ -15,6 +15,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-Length', str(len(message)))
             self.end_headers()
             self.wfile.write(message.encode())  # отправляем "OK" в ответ
+        elif self.path == '/health':  # проверка состояния сервиса
+            message = 'OK'
+            self.send_response(http.HTTPStatus.OK)
+            self.send_header('Content-Type', 'text/plain; charset=utf-8')
+            self.send_header('Content-Length', str(len(message)))
+            self.end_headers()
+            self.wfile.write(message.encode())
 
 
 # Класс сервера, наследующийся от ThreadingHTTPServer для многопоточной работы
