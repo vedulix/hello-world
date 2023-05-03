@@ -5,7 +5,7 @@ FROM python:3.9-slim-buster
 COPY . /app
 
 # Установка зависимостей
-RUN pip install --no-cache-dir -r /app/requirements.txt
+#RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Установка переменных среды
 ENV PYTHONUNBUFFERED 1
