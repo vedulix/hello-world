@@ -4,8 +4,6 @@ import http.server
 import shutil
 import socket
 
-from library.python import resource
-
 
 # Обработчик HTTP-запросов
 class Handler(http.server.BaseHTTPRequestHandler):
